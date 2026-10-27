@@ -4,7 +4,7 @@
 import axios from "axios";
 import { connection } from 'next/server';
 
-export default async function BlogPage({ params }: any) {
+export default async function BlogPage({ params }: { params: Promise<{ postId: string }> }) {
     await connection();
   const { postId } = await params;
 
